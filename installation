@@ -5,6 +5,8 @@
 # 허깅페이스 토큰(READ권한)
 # 허깅페이스 모델에 대한 access 권한(meta-llama/Meta-Llama-3.1-8B-Instruct)
 
+
+
 # 옵션1: (free tier) t2.micro(1CPU/1GiB) llama.cpp 빌드가 불가능
 # 옵션2: t2.small(1CPU/2GiB) 추론이 너무 오래걸림. 식사하고 와야함
 # 옵션3: t2.midium(2CPU/4GiB)
@@ -60,13 +62,11 @@ $ sudo apt install git
 $ git --version
 
 # (옵션: git push를 위한 key등록)
-# ssh키 추가
+# ssh키 생성/git에 등록
 $ ssh-keygen -t rsa -b 2048 -f ~/.ssh/test_key
 
 # config
 $ vi ~/.ssh/config
-
-# config
 Host github.com
      HostName github.com
      User git
@@ -75,6 +75,7 @@ Host github.com
      Port 22
 
 # git clone
+$ git clone git@github.com:Ahnkyuwon504/docker-llama.cpp.git
 
 ####################################
 ## docker 설치
@@ -119,14 +120,14 @@ $ sudo apt install python3-venv
 $ python3 -m venv kyuenv
 
 ####################################
-## llama.cpp 설치(7분)
+## llama.cpp 설치(6분)
 ####################################
 $ git clone https://github.com/ggerganov/llama.cpp
 $ cd llama.cpp
 
 # 빌드
 # 인스턴스 유형에 따라 -j옵션(병렬처리)을 주면 인스턴스가 뻗을수있음
-$ make -j
+$ make
 
 ####################################
 ## CPU 기반 추론
@@ -139,16 +140,18 @@ $ echo 'export HF_TOKEN="{token id}"' >> ~/.bashrc
 $ source ~/.bashrc
 
 ####################################
-## 필요 패키지 설치
+## 필요 패키지 설치(4분)
 ####################################
+$ cd ~
 $ source kyuenv/bin/activate
 
-$ cd AI-modeling/docker-llama-app/
+$ cd docker-llama-app/
 $ pip install -r requirements.txt
 
 ####################################
 ## 모델 다운로드(2분)
 ####################################
+$ cd ~
 $ python3 download.py
 
 ####################################
@@ -170,6 +173,7 @@ $ mv models/ ~/
 $ sh convert.sh
 
 # gguf제외하고 전부 삭제
+$ cd ~/models/gemma-2-2b-it
 $ find . -type f ! -name '*.gguf' -delete
 
 ####################################
