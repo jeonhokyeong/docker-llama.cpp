@@ -269,7 +269,11 @@ $ sudo systemctl restart docker
 ####################################
 ## 컨테이너 재기동
 ####################################
+# GPU
 $ sh run.docker.sh
+
+# CPU
+$ sh run.docker.cpu.sh
 
 # http 요청
 $ sh container.query.sh
