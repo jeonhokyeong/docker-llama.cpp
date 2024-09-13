@@ -75,7 +75,7 @@ Host github.com
      Port 22
 
 # git clone
-$ git clone git@github.com:Ahnkyuwon504/docker-llama.cpp.git
+$ git clone https://github.com/Ahnkyuwon504/docker-llama.cpp.git
 
 ####################################
 ## docker 설치
