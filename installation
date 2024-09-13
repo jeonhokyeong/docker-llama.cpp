@@ -244,11 +244,6 @@ $ sh llama.cpp.gguf.infer.sh
 # Q5_K_S: 1분 -> 3초(--n-gpu-layers:60)
 
 ####################################
-## docker 컨테이너 구동
-####################################
-$ sh run.docker.sh
-
-####################################
 ## nvidia-container-toolkit 설치
 ####################################
 # GPG키 추가/레포지토리 설정
@@ -267,7 +262,7 @@ $ sudo apt-get install -y nvidia-container-toolkit
 $ sudo systemctl restart docker
 
 ####################################
-## 컨테이너 재기동
+## docker 컨테이너 구동
 ####################################
 # GPU
 $ sh run.docker.sh
