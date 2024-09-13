@@ -1,23 +1,23 @@
 ####################################
 ## 필요한 것
 ####################################
-# AWS계정(카드 등록 필요, 소액의 클라우드 지출이 발생합니다)
-# 허깅페이스 토큰(READ권한)
-# 허깅페이스 모델에 대한 access 권한(meta-llama/Meta-Llama-3.1-8B-Instruct)
+# VS code 설치
+https://code.visualstudio.com/download
 
+# AWS계정
+실습 간 클라우드 이용 과금이 발생합니다.
+(큰 액수는 아닙니다. 아마 1-2만원 정도,,)
 
+실습과정을 잘 보셨다가 제공해 드리는 스크립트 그대로 따라 가셔도 진행에는 무방합니다.
+
+# 허깅페이스 계정 생성 및 토큰(READ)
+
+# 허깅페이스 모델 access권한
+https://huggingface.co/google/gemma-2-2b-it
 
 # 옵션1: (free tier) t2.micro(1CPU/1GiB) llama.cpp 빌드가 불가능
 # 옵션2: t2.small(1CPU/2GiB) 추론이 너무 오래걸림. 식사하고 와야함
 # 옵션3: t2.midium(2CPU/4GiB)
-
-# 볼륨 50GB 증설 필요
-# t2.small
-# llama.cpp 빌드: 5분
-# 모델 다운로드: 2분
-# 모델 변환: 5분
-# 모델 양자화: 7분
-# 추론: 측정불가
 
 # t2.midium
 ####################################
