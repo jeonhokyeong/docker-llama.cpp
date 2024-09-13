@@ -24,6 +24,7 @@ https://huggingface.co/google/gemma-2-2b-it
 ## 개발환경
 ####################################
 # 인스턴스 시작
+https://aws.amazon.com/ko/console/
 
 # VS Code 설치/[ssh] 플러그인 설치
 
