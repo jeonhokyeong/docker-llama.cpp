@@ -146,7 +146,7 @@ $ source ~/.bashrc
 $ cd ~
 $ source kyuenv/bin/activate
 
-$ cd docker-llama-app/
+$ cd docker-llama.cpp/
 $ pip install -r requirements.txt
 
 ####################################
