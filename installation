@@ -18,26 +18,40 @@ https://huggingface.co/google/gemma-2-2b-it
 # 옵션1: (free tier) t2.micro(1CPU/1GiB) llama.cpp 빌드가 불가능
 # 옵션2: t2.small(1CPU/2GiB) 추론이 너무 오래걸림. 식사하고 와야함
 # 옵션3: t2.midium(2CPU/4GiB)
-
 # t2.midium
+
+
+
+
+
+
 ####################################
-## 개발환경
+## 개발환경 (여기서 제대로 시작)
 ####################################
-# 인스턴스 시작
+# 인스턴스 시작 (aws-이메일로 로그인이 편함)
 https://aws.amazon.com/ko/console/
 
+EC2 - 인스턴스 - Launch an instance -인스턴스명 작성(ex: jerryCUP) 및 어플리케이션 이미지 ubuntu 선택
+인스턴스유형선택(사양을 결정함)
+키페어 유형 생성(이름만 추가 입력, ex: jerrykey) 
+네트워크 설정 허용 필요(내 아이피 허용)
+스토리지(디스크) - 웨비나에서는 50GB 설정 필요 $ 단, 나는 프리티어 무료인 30으로 설정함
+
 # VS Code 설치/[ssh] 플러그인 설치
+Remote SSH - Secure Shell (SSH) 프로토콜을 사용하여 원격 컴퓨터와 안전하게 통신할 수 있는 서버 프로그램
+remote explore (왼쪽버튼에서 확인) - $ aws에서 다운받은 키페어 파일을 ssh 폴더에 붙여넣기 필요
+
 
 # key.pem을 C:\Users\{user}\.ssh 폴더로 복사
 
 # .ssh 내용
 Host cpu
-  HostName {public IPv4}
+  HostName {public IPv4}  --aws인스턴스에서 가져옴
   User ubuntu
-  IdentityFile ~/.ssh/key.pem
+  IdentityFile ~/.ssh/key.pem  --키파일의 명칭과 동일하게 변경(***.pem)
 
 ####################################
-## 인스턴스 진입
+## 인스턴스 진입 
 ####################################
 # os확인
 $ cat /etc/os-release
